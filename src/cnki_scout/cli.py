@@ -15,7 +15,7 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--profile", type=Path, default=Path(".browser_profile"), help="本机浏览器登录数据目录")
     parser.add_argument("--browser-channel", choices=("chrome", "msedge"), help="使用系统浏览器；默认使用 Playwright Chromium")
     sub = parser.add_subparsers(dest="command", required=True)
-    sub.add_parser("login", help="打开浏览器，手动完成学校账号登录")
+    sub.add_parser("login", help="打开浏览器，手动登录个人或机构账号")
     run = sub.add_parser("collect", help="搜索、筛选并采集元数据")
     run.add_argument("query", help="检索关键词")
     run.add_argument("--max-results", type=int, default=30, help="最多保存几篇（1–200，默认 30）")

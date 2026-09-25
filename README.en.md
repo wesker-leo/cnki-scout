@@ -14,7 +14,7 @@ CNKI Scout uses a visible browser session to search China National Knowledge Inf
 
 ## Installation
 
-You need Python 3.10+ and access through a campus network, university VPN, or institutional account. On macOS/Linux:
+You need Python 3.10+ and a network connection or account that can access CNKI. Both personal and institutional accounts are supported. On macOS/Linux:
 
 ```bash
 git clone https://github.com/wesker-leo/cnki-scout.git
@@ -28,7 +28,7 @@ If Chrome is already installed, you may skip the last step and add `--browser-ch
 
 ## Login and collection
 
-First, complete your institutional login **manually** in the opened browser, then press Enter in the terminal:
+First, **manually** sign in with your personal or institutional CNKI account in the opened browser, then press Enter in the terminal:
 
 ```bash
 .venv/bin/cnki-scout login
@@ -76,7 +76,7 @@ When the site shows more hits than the collector saves, inspect `search_results.
 
 ## Access pacing and limitations
 
-Visits are separated by a randomized 8–15 second delay by default, with a minimum allowed delay of 5 seconds. A run can save at most 200 papers and scan at most 50 pages. The tool does not solve CAPTCHAs, rotate proxies, or send concurrent requests. It stops and preserves partial results on verification pages, HTTP 403/429/503, or pagination failures. Browser session data stays in `.browser_profile/`, and collected data stays in `output/`; both are excluded by `.gitignore`. **Do not upload or share the browser profile.** Follow the [CNKI membership service agreement](https://wap.oversea.cnki.net/cn/member/agreement.html) and your institution's access rules.
+Visits are separated by a randomized 8–15 second delay by default, with a minimum allowed delay of 5 seconds. A run can save at most 200 papers and scan at most 50 pages. The tool does not solve CAPTCHAs, rotate proxies, or send concurrent requests. It stops and preserves partial results on verification pages, HTTP 403/429/503, or pagination failures. Browser session data stays in `.browser_profile/`, and collected data stays in `output/`; both are excluded by `.gitignore`. **Do not upload or share the browser profile.** Follow the [CNKI membership service agreement](https://wap.oversea.cnki.net/cn/member/agreement.html), plus your institution's access rules if you use institutional access.
 
 CNKI may change its page structure. `--manual-search` can help when the search controls change; field extraction may still require selector updates. Browser search, sorting, and detail extraction were checked on 2026-09-25, but future site compatibility cannot be guaranteed.
 

@@ -236,7 +236,7 @@ def login(profile: Path, channel: str | None = None) -> None:
             page.goto("https://www.cnki.net/", wait_until="domcontentloaded", timeout=30_000)
             if not sys.stdin.isatty():
                 raise CollectionStopped("登录需要交互式终端。")
-            input("请在浏览器里通过学校账号登录知网；完成后按 Enter 保存本地浏览器会话…")
+            input("请在浏览器里使用个人或机构账号登录知网；完成后按 Enter 保存本地浏览器会话…")
         finally:
             context.close()
 

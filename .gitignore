@@ -1,0 +1,13 @@
+.venv/
+.browser_profile/
+output/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.DS_Store
+.env
+.env.*
+*.log
+playwright-report/
+test-results/
